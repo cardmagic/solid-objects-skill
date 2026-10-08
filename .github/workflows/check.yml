@@ -1,0 +1,31 @@
+name: Check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "17 9 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: "24.15.0"
+      - name: Validate the plugin, marketplace, and skill
+        run: npx --yes @anthropic-ai/claude-code plugin validate --strict .
+      - name: Check that each guide URL in the skill responds
+        run: |
+          status=0
+          for url in $(grep -oE 'https://solidobjects\.dev[^ )>`]*' skills/solid-objects/SKILL.md | sort -u); do
+            code=$(curl --silent --output /dev/null --write-out '%{http_code}' --max-time 30 --location "$url")
+            echo "$code $url"
+            if [ "$code" != "200" ]; then status=1; fi
+          done
+          exit $status

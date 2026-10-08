@@ -1,0 +1,20 @@
+{
+  "name": "solid-objects",
+  "version": "0.1.0",
+  "description": "Decide whether a SQL-backed virtual actor fits a Rails or Node.js problem, then implement it with Solid Objects",
+  "author": {
+    "name": "Lucas Carlson",
+    "url": "https://github.com/cardmagic"
+  },
+  "homepage": "https://solidobjects.dev",
+  "repository": "https://github.com/cardmagic/solid-objects-skill",
+  "license": "MIT",
+  "keywords": [
+    "virtual-actors",
+    "actor-model",
+    "rails",
+    "nodejs",
+    "typescript",
+    "sql"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "name": "solid-objects",
+  "description": "The Solid Objects consumer skill for Claude Code",
+  "owner": {
+    "name": "Lucas Carlson",
+    "url": "https://github.com/cardmagic"
+  },
+  "plugins": [
+    {
+      "name": "solid-objects",
+      "source": "./",
+      "description": "Decide whether a SQL-backed virtual actor fits a Rails or Node.js problem, then implement it with Solid Objects"
+    }
+  ]
+}
