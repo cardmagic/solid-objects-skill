@@ -23,7 +23,7 @@ jobs:
       - name: Check that each guide URL in the skill responds
         run: |
           status=0
-          for url in $(grep -oE 'https://solidobjects\.dev[^ )>`]*' skills/solid-objects/SKILL.md | sort -u); do
+          for url in $(grep -oE 'https://solidobjects\.dev[^ )>`]*' skills/solid-objects/SKILL.md | sed -E 's/[.,;:]+$//' | sort -u); do
             code=$(curl --silent --output /dev/null --write-out '%{http_code}' --max-time 30 --location "$url")
             echo "$code $url"
             if [ "$code" != "200" ]; then status=1; fi
