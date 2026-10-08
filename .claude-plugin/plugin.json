@@ -1,7 +1,7 @@
 {
   "name": "solid-objects",
-  "version": "0.1.0",
-  "description": "Decide whether a SQL-backed virtual actor fits a Rails or Node.js problem, then implement it with Solid Objects",
+  "version": "0.2.0",
+  "description": "Decide whether a SQL-backed virtual actor fits a Rails, Node.js, or browser problem, then implement it with Solid Objects",
   "author": {
     "name": "Lucas Carlson",
     "url": "https://github.com/cardmagic"
@@ -15,6 +15,8 @@
     "rails",
     "nodejs",
     "typescript",
-    "sql"
+    "sql",
+    "browser",
+    "sqlite-wasm"
   ]
 }

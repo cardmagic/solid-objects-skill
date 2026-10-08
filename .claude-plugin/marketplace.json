@@ -9,7 +9,7 @@
     {
       "name": "solid-objects",
       "source": "./",
-      "description": "Decide whether a SQL-backed virtual actor fits a Rails or Node.js problem, then implement it with Solid Objects"
+      "description": "Decide whether a SQL-backed virtual actor fits a Rails, Node.js, or browser problem, then implement it with Solid Objects"
     }
   ]
 }
