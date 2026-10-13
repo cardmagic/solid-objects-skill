@@ -1,6 +1,6 @@
 {
   "name": "solid-objects",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Decide whether a SQL-backed virtual actor fits a Rails, Node.js, or browser problem, then implement it with Solid Objects",
   "author": {
     "name": "Lucas Carlson",

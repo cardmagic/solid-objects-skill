@@ -124,7 +124,8 @@ facts:
 - Delivery is at least once, not exactly once.
 - There are no transactions across actor identities.
 - One hot identity is sequential.
-- The packages are pre-1.0 and make no production-ready claim.
+- Version 1.0 promises a stable public API. It makes no claim of measured scale,
+  and no production use by other people is known.
 - In a browser: CI tests Chromium only, reminders run only while a tab runs the
   worker, and a browser policy is not a security boundary. The server must
   authenticate each device that sends writes.
