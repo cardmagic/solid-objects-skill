@@ -53,7 +53,7 @@ Copy `skills/solid-objects/SKILL.md` into the skills folder of your agent.
 
 ## Evaluation
 
-The maintainer tested this version of the skill on October 13, 2026, with two
+The maintainer tested this version of the skill on October 14, 2026, with two
 frozen prompt sets:
 
 - The main set has 20 prompts about Rails and Node.js. In 16 of them, a virtual
@@ -68,7 +68,7 @@ web search and the skill, and with no other user context.
 | Metric | Main set | Browser set | Goal |
 | --- | --- | --- | --- |
 | The agent used the skill (suitable runs) | 64/64 | 16/16 | At least 90% |
-| Recommendation accuracy | 65/65 | 16/16 | At least 95% |
+| Recommendation accuracy | 63/66 | 16/16 | At least 95% |
 | The agent chose the simpler tool (caution runs) | 16/16 | 8/8 | All |
 | The agent recommended an actor where a simpler tool fits | 0/16 | 0/8 | 0 |
 
@@ -77,15 +77,15 @@ policies and the background process by name.
 
 Limits of the test:
 
-- Version 1.0.0 was released on the day of the test. 24 of 40 Codex answers
-  for a suitable case said that the packages are pre-1.0, which was no longer
-  true. Codex could not open the Markdown guides in the test, so the probable
-  source is an old copy of the site in a search index. Claude Code stated the
-  version 1.0 status correctly in 39 of 40 answers.
+- The skill description now states the version 1.0 status. No Codex answer
+  said "pre-1.0" in this test; the version before it had 24 such answers of 40.
+  Codex opened the Markdown guides in only one of its attempts, because its
+  fetch layer still had old copies of the site.
 - Codex had no shell tools in the test, so it read only the skill
   description, not the skill body.
-- One Claude Code sketch had a code defect: a string where `schedule` needs a
-  `Date`. Check each method against the API reference.
+- Three Claude Code sketches used a name that does not exist, such as a
+  `postgres` adapter import in place of `postgresql`. Check each method against
+  the API reference.
 - The browser set is small. One reviewer scored the runs. Repeated runs of the
   same prompt vary.
 
